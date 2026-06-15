@@ -103,7 +103,6 @@ Route::post('/admin/giftcard/upload', [ProductController::class, 'upload'])->nam
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add'); 
 Route::post('/cart/update', [CartController::class, 'addToCartById'])->name('cart.update'); 
-Route::get('/cart', [CartController::class, 'showCart'])->name('cart.index');
 Route::get('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
 
 
@@ -141,7 +140,7 @@ Route::get('/orders/summary/{id}',[OrderController::class, 'showOrderSummary'])
 
 
 Route::post('/addaddress', [ShippingAddressController::class, 'addAddress'])->name('addresses.add');
-Route::get('/addaddress', [ShippingAddressController::class, 'index'])->name('addresses.add');
+Route::get('/addaddress', [ShippingAddressController::class, 'index'])->name('addresses.index');
 Route::get('/address/{id}/edit', [ShippingAddressController::class, 'editAddress'])->name('addresses.edit');
 Route::post('/address/{id}/update', [ShippingAddressController::class, 'updateAddress'])->name('addresses.update');
 Route::get('/payment/process', [PaymentController::class, 'processPayment'])->name('payment.process');
