@@ -106,7 +106,7 @@ Route::post('/cart/update', [CartController::class, 'addToCartById'])->name('car
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.index');
 Route::get('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
 
-Route::get('wishlist/remove/{product}', [WishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
+
 
 // Wishlist Routes
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
