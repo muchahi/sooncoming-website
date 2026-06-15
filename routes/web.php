@@ -224,7 +224,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('product/type', [ManageProductController::class, 'createType'])->name('admin.type');
 
         Route::post('gallery/upload', [ProductController::class, 'uploadImages'])->name('admin.gallery.upload');
-        Route::post('product/store', [ProductController::class, 'storeProductWithImages'])->name('admin.product.store');
+        Route::post('product/store', [ProductController::class, 'storeProductWithImages'])->name('admin.product.store.images');
 
         Route::get('product/all', [ProductController::class, 'AdminIndex'])->name('admin.products.index');
         Route::get('product/{id}/edit', [ProductController::class, 'AdminEdit'])->name('admin.products.edit');
