@@ -214,8 +214,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('merchant/onboard', [MerchantController::class, 'onboard'])->name('admin.merchant.onboard');
         Route::post('suspend-merchant/{id}', [AdminController::class, 'suspendMerchant']);
 
-        Route::resource('products', ProductController::class);
-        Route::resource('orders', OrderController::class);
+        Route::resource('products', ProductController::class)->names('admin.products');
+        Route::resource('orders', OrderController::class)->names('admin.orders');
         Route::resource('categories', ProductCategoryController::class)->names('admin.category');
 
         Route::get('product/add', [ManageProductController::class, 'create'])->name('admin.product.add');
