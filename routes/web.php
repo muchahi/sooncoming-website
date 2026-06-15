@@ -160,9 +160,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('login', [MerchantController::class, 'login']);
         Route::get('home', [MerchantController::class, 'dashboard']);
 
-        Route::resource('products', ProductController::class);
-        Route::resource('categories', ProductCategoryController::class);
-        Route::resource('types', ProductTypeController::class);
+        Route::resource('products', ProductController::class)->names('merchant.products');
+        Route::resource('categories', ProductCategoryController::class)->names('merchant.categories');
+        Route::resource('types', ProductTypeController::class)->names('merchant.types');
     });
     
     
@@ -196,7 +196,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('admin/orders/{order}/message', [AdminController::class, 'sendMessage'])->name('admin.orders.message');
         // Route for processing a refund
         Route::post('admin/orders/{order}/refund', [AdminController::class, 'processRefund'])->name('admin.orders.refund');
-         Route::resource('pickups', PickupController::class);
+         Route::resource('pickups', PickupController::class)->names('merchant.pickups');
         Route::get('/dashboard', [AdminController::class, 'home'])->name('admin.dashboard');
         Route::get('merchants', [AdminController::class, 'manageMerchants'])->name('admin.merchants');
         Route::get('users', [AdminController::class, 'listAllUsers'])->name('admin.users');
@@ -231,7 +231,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('product/{id}/update', [ProductController::class, 'update'])->name('admin.products.update');
         Route::delete('product/{id}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
-        Route::resource('locations', AppLocationController::class);
+        Route::resource('locations', AppLocationController::class)->names('admin.locations');
         
            
          
